@@ -24,6 +24,8 @@ import Horizontal from '@/views/pages/widget-examples/statistics/Horizontal'
 import { CardStatsType } from '@/types/pages/widgetTypes'
 import CardStatsLineAreaCharts from '@/views/pages/widget-examples/statistics/CardStatsLineAreaCharts'
 import PopularProducts from '@/views/pages/widget-examples/advanced/PopularProducts'
+import SalesOverview from '@/views/pages/widget-examples/statistics/SalesOverview'
+import MonthlyCampaignState from '@/views/pages/widget-examples/advanced/MonthlyCampaignState'
 
 const getData = async () => {
   // Vars
@@ -62,7 +64,7 @@ const DashboardCRM = async () => {
           avatarIcon='tabler-users'
           change='29'
           subTitle='MAU'
-          value='81,419'
+          value='81,459'
           changeNumber='29%'
         />
       </Grid>
@@ -114,10 +116,16 @@ const DashboardCRM = async () => {
               chartSeries: [{ data: [44, 75, 24, 57, 6, 84] }]
             }
           ]}
-        />
+        />{' '}
+        <div className='grid grid-cols-2 gap-6 mt-4'>
+          <LineAreaDailySalesChart />
+
+          <SalesOverview />
+        </div>
       </Grid>
+
       <Grid item xs={12} md={6} lg={4}>
-        <PopularProducts />
+        <MonthlyCampaignState />
       </Grid>
     </Grid>
   )

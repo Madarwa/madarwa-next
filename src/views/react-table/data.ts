@@ -8,27 +8,27 @@ export type DataType = {
 const data: DataType[] = [
   {
     id: 1,
-    token: 'BTC',
-    type: 'Bitcoin',
-    price: '$10,000'
+    token: 'STRK',
+    type: 'ERC20',
+    price: '5,000'
   },
   {
     id: 2,
-    token: 'ETH',
-    type: 'Ethereum',
-    price: '$1,000'
+    token: 'CMPY',
+    type: 'Security',
+    price: '1'
   },
   {
     id: 3,
-    token: 'XRP',
-    type: 'Ripple',
-    price: '$0.50'
+    token: 'NYREAL3',
+    type: 'Real Estate',
+    price: '0.50'
   },
   {
     id: 4,
-    token: 'BNB',
-    type: 'Binance Coin',
-    price: '$300'
+    token: 'SGold',
+    type: 'Commodity',
+    price: '4519'
   }
 ]
 

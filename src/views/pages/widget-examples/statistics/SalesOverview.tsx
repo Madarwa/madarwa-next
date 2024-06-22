@@ -25,7 +25,7 @@ const SalesOverview = () => {
       <CardContent>
         <div className='flex items-start justify-between gap-3'>
           <div>
-            <Typography>Sales Overview</Typography>
+            <Typography>Daily Bridged Value</Typography>
             <Typography variant='h4'>$42.5k</Typography>
           </div>
           <Typography color='success.main' className='font-medium'>
@@ -38,7 +38,7 @@ const SalesOverview = () => {
               <CustomAvatar skin='light' color='info' variant='rounded' size={24}>
                 <i className='tabler-shopping-cart text-lg' />
               </CustomAvatar>
-              <Typography>Order</Typography>
+              <Typography>In</Typography>
             </div>
             <Typography variant='h5'>62.2%</Typography>
             <Typography variant='body2' color='text.disabled'>
@@ -53,7 +53,7 @@ const SalesOverview = () => {
           <div className='flex items-end flex-col plb-2'>
             <div className='flex items-center mbe-2 gap-x-[6px]'>
               <Typography color='text.secondary' className='m'>
-                Visits
+                Out
               </Typography>
               <CustomAvatar skin='light' variant='rounded' size={24} color='primary'>
                 <i className='tabler-link text-lg' />

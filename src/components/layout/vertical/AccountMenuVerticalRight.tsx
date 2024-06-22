@@ -137,12 +137,12 @@ const AccountMenuVerticalRight = (props: Props) => {
         <p className='flex items-center text-xs'>
           {' '}
           <i className='tabler-point-filled stroke-success bg-success align-bottom ' />
-          Can Trade Security Tokens1133
+          Can Trade Security Tokens
         </p>
         <p className='flex items-center text-xs'>
           {' '}
           <i className='tabler-point-filled stroke-success bg-success align-bottom' />
-          Can Trade Security Tokens11
+          Not in Sanction List.
         </p>
         <Button className='bg-[#28C76F] bg-opacity-20 w-full text-success h-7  rounded-lg'>KYC Approved</Button>
       </Card>
@@ -151,10 +151,10 @@ const AccountMenuVerticalRight = (props: Props) => {
         <p className='flex items-center text-xs'>
           {' '}
           <i className='tabler-point-filled stroke-success bg-error align-bottom ' />
-          Can Trade Security Tokens22
+          Cannot Mint Security Tokens
         </p>
 
-        <Button className='bg-primary text-white w-full h-7  rounded-lg'>KYC Approved</Button>
+        <Button className='bg-primary text-white w-full h-7  rounded-lg'>Start KYB</Button>
       </Card>
     </VerticalNav>
   )

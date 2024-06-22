@@ -87,35 +87,35 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
         menuSectionStyles={menuSectionStyles(verticalNavOptions, theme)}
       >
         <MenuSection label={dictionary['navigation'].madaRWANativedApps}>
-          <MenuItem href={`/${locale}/forms/form-layouts`} icon={<i className='tabler-globe' />}>
+          <MenuItem href={`/${locale}/crossBorderPayment`} icon={<i className='tabler-globe' />}>
             {dictionary['navigation'].crossBorderPayment}
           </MenuItem>
-          <MenuItem href={`/${locale}/forms/form-validation`} icon={<i className='tabler-transfer' />}>
+          <MenuItem href={`/${locale}/transfer`} icon={<i className='tabler-transfer' />}>
             {dictionary['navigation'].transfer}
           </MenuItem>
-          <MenuItem href={`/${locale}/forms/form-wizard`} icon={<i className='tabler-basket' />}>
+          <MenuItem href={`/${locale}/assetManagement`} icon={<i className='tabler-basket' />}>
             {dictionary['navigation'].assetManagement}
           </MenuItem>
-          <MenuItem href={`/${locale}/react-table`} icon={<i className='tabler-arrow-bar-down' />}>
+          <MenuItem href={`/${locale}/tokenEngine`} icon={<i className='tabler-arrow-bar-down' />}>
             {dictionary['navigation'].tokenEngine}
           </MenuItem>
         </MenuSection>
         <MenuSection label={dictionary['navigation'].RWAOfferings}>
-          <MenuItem href={`/${locale}/forms/form-layouts`} icon={<i className='tabler-sitemap' />}>
+          <MenuItem href={`/${locale}/realEstateTokens`} icon={<i className='tabler-sitemap' />}>
             {dictionary['navigation'].realEstateTokens}
           </MenuItem>
-          <MenuItem href={`/${locale}/forms/form-validation`} icon={<i className='tabler-plant' />}>
+          <MenuItem href={`/${locale}/loans`} icon={<i className='tabler-plant' />}>
             {dictionary['navigation'].loans}
           </MenuItem>
-          <MenuItem href={`/${locale}/forms/form-wizard`} icon={<i className='tabler-coin' />}>
+          <MenuItem href={`/${locale}/commodities`} icon={<i className='tabler-coin' />}>
             {dictionary['navigation'].commodities}
           </MenuItem>
         </MenuSection>
         <MenuSection label={dictionary['navigation'].securityTokens}>
-          <MenuItem href={`/${locale}/forms/form-layouts`} icon={<i className='tabler-planet' />}>
+          <MenuItem href={`/${locale}/toStark`} icon={<i className='tabler-planet' />}>
             {dictionary['navigation'].toStarknet}
           </MenuItem>
-          <MenuItem href={`/${locale}/forms/form-validation`} icon={<i className='tabler-pokeball' />}>
+          <MenuItem href={`/${locale}/toEth`} icon={<i className='tabler-pokeball' />}>
             {dictionary['navigation'].toEthereum}
           </MenuItem>
         </MenuSection>

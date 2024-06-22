@@ -25,48 +25,33 @@ type DataType = {
 // Vars
 const data: DataType[] = [
   {
-    title: 'Emails',
+    title: 'Real Estate',
     amount: '12,346',
-    trendNumber: '0.3%',
+    trendNumber: '',
     avatarColor: 'success',
-    icon: 'tabler-mail'
+    icon: 'tabler-home'
   },
   {
-    title: 'Opened',
+    title: 'Loans',
     amount: '8,734',
-    trendNumber: '2.1%',
+    trendNumber: '',
     avatarColor: 'info',
-    icon: 'tabler-link'
+    icon: 'tabler-git-fork'
   },
   {
-    title: 'Clicked',
+    title: 'Commodities',
     amount: '967',
-    trendNumber: '1.4%',
+    trendNumber: '',
     trend: 'negative',
     avatarColor: 'warning',
-    icon: 'tabler-mouse'
+    icon: 'tabler-plant'
   },
   {
-    title: 'Subscribe',
+    title: 'Security Tokens',
     amount: '345',
-    trendNumber: '8.5%',
+    trendNumber: '',
     avatarColor: 'primary',
-    icon: 'tabler-users'
-  },
-  {
-    title: 'Complaints',
-    amount: '10',
-    trendNumber: '1.5%',
-    trend: 'negative',
-    avatarColor: 'secondary',
-    icon: 'tabler-alert-triangle'
-  },
-  {
-    title: 'Unsubscribe',
-    amount: '86',
-    trendNumber: '0.8%',
-    avatarColor: 'error',
-    icon: 'tabler-ban'
+    icon: 'tabler-coin'
   }
 ]
 
@@ -74,8 +59,8 @@ const MonthlyCampaignState = () => {
   return (
     <Card>
       <CardHeader
-        title='Monthly Campaign State'
-        subheader='8.52k Social Visitors'
+        title='Tokenized Value($M)'
+        subheader='By Sector'
         action={<OptionMenu options={['Last Month', 'Last 6 Months', 'Last Year']} />}
       />
       <CardContent className='flex flex-col gap-[1.5625rem]'>
