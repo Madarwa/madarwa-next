@@ -59,6 +59,8 @@
     "react-use": "17.5.0",
     "recharts": "2.12.2",
     "server-only": "0.0.1",
+    "starknet": "^5.24.3",
+    "starknetkit": "^1.1.9",
     "stylis": "4.3.1",
     "stylis-plugin-rtl": "2.1.1",
     "tailwindcss": "3.4.1",
@@ -67,6 +69,9 @@
     "valibot": "0.29.0"
   },
   "devDependencies": {
+    "@iconify/tools": "4.0.2",
+    "@iconify/types": "2.0.0",
+    "@iconify/utils": "2.1.22",
     "@types/negotiator": "^0.6.3",
     "@types/node": "^20.11.25",
     "@types/react": "^18.2.64",
@@ -88,10 +93,7 @@
     "prisma": "5.10.2",
     "stylelint": "16.2.1",
     "stylelint-use-logical-spec": "5.0.1",
-    "typescript": "5.4.2",
-    "@iconify/tools": "4.0.2",
-    "@iconify/types": "2.0.0",
-    "@iconify/utils": "2.1.22"
+    "typescript": "5.4.2"
   },
   "resolutions": {
     "immutable": "3.7.4"
