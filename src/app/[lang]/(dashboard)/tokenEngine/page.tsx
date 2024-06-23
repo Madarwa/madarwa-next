@@ -159,15 +159,17 @@ const DashboardCRM = () => {
                   }}
                 ></MenuItem>
               </CustomTextField>
-              <Button
-                className='mt-2'
-                size='small'
-                variant='contained'
-                onClick={() => setCount(count + 1)}
-                startIcon={<i className='tabler-plus' />}
-              >
-                Add new Compliance Standard
-              </Button>
+              <Tooltip title='Will be activated after hackhathon'>
+                <Button
+                  className='mt-2'
+                  size='small'
+                  variant='contained'
+                  onClick={() => setCount(count + 1)}
+                  startIcon={<i className='tabler-plus' />}
+                >
+                  Add new Compliance Standard
+                </Button>
+              </Tooltip>
             </div>
           </div>
           <div className='flex flex-col gap-2'>
@@ -253,14 +255,16 @@ const DashboardCRM = () => {
           </div>
         ))}
         <Grid item xs={12}>
-          <Button
-            size='small'
-            variant='contained'
-            onClick={() => setCount(count + 1)}
-            startIcon={<i className='tabler-plus' />}
-          >
-            Asset Proof Service
-          </Button>
+          <Tooltip title='Will be activated after hackhathon'>
+            <Button
+              size='small'
+              variant='contained'
+              onClick={() => setCount(count + 1)}
+              startIcon={<i className='tabler-plus' />}
+            >
+              Asset Proof Service
+            </Button>
+          </Tooltip>
         </Grid>
       </Grid>
       <div className='flex w-full justify-center'>
@@ -269,7 +273,7 @@ const DashboardCRM = () => {
           size='large'
           variant='contained'
           onClick={() => setCount(count + 1)}
-          startIcon={<i className='tabler-plus' />}
+          startIcon={<i className='tabler-coins' />}
         >
           Tokenize
         </Button>
