@@ -1,7 +1,7 @@
 // MUI Imports
 'use client'
 
-import { Alert } from '@mui/material'
+import { Alert, Button } from '@mui/material'
 
 const Failed = () => {
   // Vars
@@ -11,11 +11,14 @@ const Failed = () => {
       {' '}
       <p className='font-bold'>Tokenization is not completed. Need KYB</p>
       <Alert severity='warning' onClose={() => {}}>
-        Only Business provided KYB, can use the Token Engine.
+        You can only send this token to KYCed Users, Otherwise transfer will be failed.
       </Alert>
       <Alert severity='warning' onClose={() => {}}>
         Click to View Failed TX.
       </Alert>
+      <Button variant='contained' className='flex mx-20 bg-success' endIcon={<i className='tabler-arrow-back-up ' />}>
+        Return to Main Page
+      </Button>
     </div>
   )
 }

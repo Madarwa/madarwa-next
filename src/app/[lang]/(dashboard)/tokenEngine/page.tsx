@@ -50,7 +50,7 @@ import CustomTextField from '@/@core/components/mui/TextField'
 import { InvoiceType } from '@/types/apps/invoiceTypes'
 import { FormDataType } from '@/views/apps/invoice/add/AddCustomerDrawer'
 
-const DashboardCRM = () => {
+const TokenEngine = () => {
   // Vars
   const [open, setOpen] = useState(false)
   const [count, setCount] = useState(1)
@@ -282,4 +282,4 @@ const DashboardCRM = () => {
   )
 }
 
-export default DashboardCRM
+export default TokenEngine
