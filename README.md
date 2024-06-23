@@ -90,6 +90,7 @@ Tried to utilize OpenZeppelin contracts as they almost always decide on the stan
 Tried to keep contracts as simple as possible, in demo sake of simplicity we are holding state on erc20 contract, which is okay solution, for alternative we have switched to wallet to hold the state.
 
 
+## Frontend
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
