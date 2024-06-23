@@ -46,14 +46,15 @@ const Transfer = () => {
               Selected Token{' '}
             </Typography>
             <CustomTextField
-              select
               className={classnames('min-is-[220px]', { 'is-1/2': isBelowSmScreen })}
-              value={selectData?.id || ''}
+              value={'NYREAL3'}
               onChange={e => {}}
+              defaultValue={'NYREAL3'}
+              disabled
             >
               <MenuItem
                 className='flex items-center gap-2 !text-success !bg-transparent hover:text-success hover:!bg-[var(--mui-palette-success-lightOpacity)]'
-                value=''
+                value='NYREAL3'
                 onClick={() => {
                   setSelectData(null)
                   setOpen(true)
@@ -65,11 +66,7 @@ const Transfer = () => {
             <Typography className='font-medium' color='text.primary'>
               Amount to Send{' '}
             </Typography>
-            <CustomTextField
-              className={classnames('min-is-[220px]', { 'is-1/2': isBelowSmScreen })}
-              value={selectData?.id || ''}
-              onChange={e => {}}
-            >
+            <CustomTextField className={classnames('min-is-[220px]', { 'is-1/2': isBelowSmScreen })} onChange={e => {}}>
               <MenuItem
                 className='flex items-center gap-2 !text-success !bg-transparent hover:text-success hover:!bg-[var(--mui-palette-success-lightOpacity)]'
                 value=''
@@ -92,11 +89,7 @@ const Transfer = () => {
         <Typography className='font-medium' color='text.primary'>
           Receiver Wallet
         </Typography>
-        <CustomTextField
-          className={classnames('min-is-[220px]', { 'is-1/2': isBelowSmScreen })}
-          value={selectData?.id || ''}
-          onChange={e => {}}
-        >
+        <CustomTextField className={classnames('min-is-[220px]', { 'is-1/2': isBelowSmScreen })} onChange={e => {}}>
           <MenuItem
             className='flex items-center gap-2 !text-success !bg-transparent hover:text-success hover:!bg-[var(--mui-palette-success-lightOpacity)]'
             value=''

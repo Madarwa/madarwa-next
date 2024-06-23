@@ -25,7 +25,7 @@ import { Avatar, AvatarGroup, Button, Card, Grid, Icon } from '@mui/material'
 import LineAreaYearlySalesChart from '@/views/dashboards/crm/LineAreaYearlySalesChart'
 import LineAreaDailySalesChart from '@/views/dashboards/analytics/LineAreaDailySalesChart'
 import BasicDataTables from '@/views/react-table/BasicDataTables'
-
+import { useParams, useRouter, useSearchParams } from 'next/navigation'
 type Props = {
   dictionary: Awaited<ReturnType<typeof getDictionary>>
   mode: Mode
@@ -52,9 +52,12 @@ const StyledBoxForShadow = styled('div')(({ theme }) => ({
 
 const AccountMenuVerticalRight = (props: Props) => {
   // Props
+  const router = useRouter()
+  const searchParams = useSearchParams()
   const { dictionary, mode, systemMode } = props
-
+  const redirectURL = searchParams.get('redirectTo') ?? '/kyb'
   // Hooks
+
   const verticalNavOptions = useVerticalNav()
   const { updateSettings, settings } = useSettings()
   const { mode: muiMode, systemMode: muiSystemMode } = useColorScheme()
@@ -99,6 +102,8 @@ const AccountMenuVerticalRight = (props: Props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [settings.layout])
 
+  const KYBVerified = true
+  const KYCVerified = true
   return (
     // eslint-disable-next-line lines-around-comment
     // Sidebar Vertical Menu
@@ -121,9 +126,7 @@ const AccountMenuVerticalRight = (props: Props) => {
       </text>
       <Card className=' mx-2 h-12 mt-0 px-5 py-2 flex  items-center justify-between bg-backgroundDefault rounded shadow-md'>
         <Avatar></Avatar>
-        <text>
-          <strong className='text-bold'>Emre</strong> 0x421...Ab
-        </text>
+        <text>0x421...Ab</text>
         <i className='tabler-link-off' />
       </Card>
       <Grid item xs={12} sm={6} md={4} lg={3} className='p-2'>
@@ -132,30 +135,70 @@ const AccountMenuVerticalRight = (props: Props) => {
       <Card className='overflow-y-auto max-h-40 mx-2 overflow-x-auto shadow-md'>
         <BasicDataTables />
       </Card>
-      <Card className='flex flex-col p-4 rounded-lg m-2 mt-4 gap-2 shadow-md '>
-        <p className='text-md'>KYC</p>
-        <p className='flex items-center text-xs'>
-          {' '}
-          <i className='tabler-point-filled stroke-success bg-success align-bottom ' />
-          Can Trade Security Tokens
-        </p>
-        <p className='flex items-center text-xs'>
-          {' '}
-          <i className='tabler-point-filled stroke-success bg-success align-bottom' />
-          Not in Sanction List.
-        </p>
-        <Button className='bg-[#28C76F] bg-opacity-20 w-full text-success h-7  rounded-lg'>KYC Approved</Button>
-      </Card>
-      <Card className='flex flex-col p-4 rounded-lg m-2 mt-4 gap-2 shadow-md'>
-        <p className='text-md'>KYB</p>
-        <p className='flex items-center text-xs'>
-          {' '}
-          <i className='tabler-point-filled stroke-success bg-error align-bottom ' />
-          Cannot Mint Security Tokens
-        </p>
+      {KYCVerified ? (
+        <Card className='flex flex-col p-4 rounded-lg m-2 mt-4 gap-2 shadow-md '>
+          <p className='text-md'>KYC</p>
+          <p className='flex items-center text-xs'>
+            {' '}
+            <i className='tabler-point-filled stroke-success bg-success align-bottom ' />
+            Can Trade Security Tokens
+          </p>
+          <p className='flex items-center text-xs'>
+            {' '}
+            <i className='tabler-point-filled stroke-success bg-success align-bottom' />
+            Not in Sanction List.
+          </p>
+          <Button className='bg-[#28C76F] bg-opacity-20 w-full text-success h-7  rounded-lg'>KYC Approved</Button>
+        </Card>
+      ) : (
+        <Card className='flex flex-col p-4 rounded-lg m-2 mt-4 gap-2 shadow-md'>
+          <p className='text-md'>KYC</p>
+          <p className='flex items-center text-xs'>
+            {' '}
+            <i className='tabler-point-filled stroke-success bg-error align-bottom ' />
+            Cannot Mint Security Tokens
+          </p>
 
-        <Button className='bg-primary text-white w-full h-7  rounded-lg'>Start KYB</Button>
-      </Card>
+          <Button
+            className='bg-primary text-white w-full h-7  rounded-lg cursor-pointer'
+            onClick={() => router.push(redirectURL)}
+          >
+            Start KYC
+          </Button>
+        </Card>
+      )}
+      {KYBVerified ? (
+        <Card className='flex flex-col p-4 rounded-lg m-2 mt-4 gap-2 shadow-md '>
+          <p className='text-md'>KYB</p>
+          <p className='flex items-center text-xs'>
+            {' '}
+            <i className='tabler-point-filled stroke-success bg-success align-bottom ' />
+            Can Trade Security Tokens
+          </p>
+          <p className='flex items-center text-xs'>
+            {' '}
+            <i className='tabler-point-filled stroke-success bg-success align-bottom' />
+            In Sanction List.
+          </p>
+          <Button className='bg-[#28C76F] bg-opacity-20 w-full text-success h-7  rounded-lg'>KYB Approved</Button>
+        </Card>
+      ) : (
+        <Card className='flex flex-col p-4 rounded-lg m-2 mt-4 gap-2 shadow-md'>
+          <p className='text-md'>KYB</p>
+          <p className='flex items-center text-xs'>
+            {' '}
+            <i className='tabler-point-filled stroke-success bg-error align-bottom ' />
+            Cannot Mint Security Tokens
+          </p>
+
+          <Button
+            className='bg-primary text-white w-full h-7  rounded-lg cursor-pointer'
+            onClick={() => router.push(redirectURL)}
+          >
+            Start KYB
+          </Button>
+        </Card>
+      )}
     </VerticalNav>
   )
 }

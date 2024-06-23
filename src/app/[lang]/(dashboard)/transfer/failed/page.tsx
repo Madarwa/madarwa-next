@@ -9,7 +9,6 @@ const Failed = () => {
   return (
     <div className='flex flex-col w-70 p-10  border shadow-sm gap-6 mt-20'>
       {' '}
-      <p className='font-bold'>Tokenization is not completed. Need KYB</p>
       <Alert severity='warning' onClose={() => {}}>
         You can only send this token to KYCed Users, Otherwise transfer will be failed.
       </Alert>

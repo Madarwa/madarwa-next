@@ -49,9 +49,15 @@ import React, { SyntheticEvent, useState } from 'react'
 import CustomTextField from '@/@core/components/mui/TextField'
 import { InvoiceType } from '@/types/apps/invoiceTypes'
 import { FormDataType } from '@/views/apps/invoice/add/AddCustomerDrawer'
+import { useParams, useRouter, useSearchParams } from 'next/navigation'
+import { getLocalizedUrl } from '@/utils/i18n'
+import type { Locale } from '@/configs/i18n'
 
 const TokenEngine = () => {
   // Vars
+  const router = useRouter()
+  const searchParams = useSearchParams()
+  const { lang: locale } = useParams()
   const [open, setOpen] = useState(false)
   const [count, setCount] = useState(1)
   const [selectData, setSelectData] = useState<InvoiceType | null>(null)
@@ -75,6 +81,7 @@ const TokenEngine = () => {
   const handleAlignment = (event: React.MouseEvent<HTMLElement>, newAlignment: string | null) => {
     setAlignment(newAlignment)
   }
+  const redirectURL = searchParams.get('redirectTo') ?? '/tokenEngine/success'
   return (
     <div>
       <div className='flex m-5 h-12 w-70 bg-gray-200 pl-5 items-center gap-3'>
@@ -125,14 +132,15 @@ const TokenEngine = () => {
                 Token Standard
               </Typography>
               <CustomTextField
-                select
                 className={classnames('min-is-[220px]', { 'is-1/2': isBelowSmScreen })}
-                value={selectData?.id || ''}
+                defaultValue={'Fungible Token'}
+                value={'Fungible Token'}
                 onChange={e => {}}
+                disabled
               >
                 <MenuItem
                   className='flex items-center gap-2 !text-success !bg-transparent hover:text-success hover:!bg-[var(--mui-palette-success-lightOpacity)]'
-                  value=''
+                  value='Fungible Token'
                   onClick={() => {
                     setSelectData(null)
                     setOpen(true)
@@ -145,14 +153,15 @@ const TokenEngine = () => {
                 Regulary Compliance madaRWA Standard
               </Typography>
               <CustomTextField
-                select
+                disabled
                 className={classnames('min-is-[220px]', { 'is-1/2': isBelowSmScreen })}
-                value={selectData?.id || ''}
+                value={'MiCA Regulation Standard by MiCA'}
                 onChange={e => {}}
+                defaultValue={'MiCA Regulation Standard by MiCA'}
               >
                 <MenuItem
                   className='flex items-center gap-2 !text-success !bg-transparent hover:text-success hover:!bg-[var(--mui-palette-success-lightOpacity)]'
-                  value=''
+                  value='MiCA Regulation Standard by MiCA'
                   onClick={() => {
                     setSelectData(null)
                     setOpen(true)
@@ -272,7 +281,7 @@ const TokenEngine = () => {
           className='m-5 mt-2 w-60'
           size='large'
           variant='contained'
-          onClick={() => setCount(count + 1)}
+          onClick={() => router.push(redirectURL)}
           startIcon={<i className='tabler-coins' />}
         >
           Tokenize
