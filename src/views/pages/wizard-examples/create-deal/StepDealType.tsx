@@ -72,7 +72,7 @@ const ImgWrapper = styled('div')(({ theme }) => ({
 
 const regionArray = ['Select Region', 'Asia', 'Europe', 'Africa', 'Australia', 'North America', 'South America']
 
-const StepDealType = ({ activeStep, handleNext, handlePrev, steps }: Props) => {
+const StepDealType = () => {
   const initialSelectedOption: string = data.filter(item => item.isSelected)[
     data.filter(item => item.isSelected).length - 1
   ].value
@@ -93,12 +93,7 @@ const StepDealType = ({ activeStep, handleNext, handlePrev, steps }: Props) => {
   }
 
   return (
-    <Grid container spacing={6}>
-      <Grid item xs={12}>
-        <ImgWrapper>
-          <img width={650} alt='illustration' src={`/images/pages/create-deal-type-${theme.palette.mode}.png`} />
-        </ImgWrapper>
-      </Grid>
+    <Grid container spacing={6} className='mx-5'>
       {data.map((item, index) => {
         let asset
 
@@ -118,60 +113,6 @@ const StepDealType = ({ activeStep, handleNext, handlePrev, steps }: Props) => {
           />
         )
       })}
-      <Grid item xs={12} sm={6}>
-        <CustomTextField
-          fullWidth
-          type='number'
-          label='Discount'
-          placeholder='25'
-          helperText='Enter the discount percentage. 10 = 10%'
-        />
-      </Grid>
-      <Grid item xs={12} sm={6}>
-        <CustomTextField
-          select
-          fullWidth
-          value={region}
-          SelectProps={{
-            onChange: e => setRegion(e.target.value as string)
-          }}
-          label='Region'
-        >
-          {regionArray.map((item, index) => (
-            <MenuItem key={item} value={index === 0 ? '' : item}>
-              {item}
-            </MenuItem>
-          ))}
-        </CustomTextField>
-        <FormHelperText>Select applicable regions for the deal.</FormHelperText>
-      </Grid>
-      <Grid item xs={12}>
-        <div className='flex items-center justify-between'>
-          <Button
-            variant='tonal'
-            color='secondary'
-            disabled={activeStep === 0}
-            onClick={handlePrev}
-            startIcon={<DirectionalIcon ltrIconClass='tabler-arrow-left' rtlIconClass='tabler-arrow-right' />}
-          >
-            Previous
-          </Button>
-          <Button
-            variant='contained'
-            color={activeStep === steps.length - 1 ? 'success' : 'primary'}
-            onClick={handleNext}
-            endIcon={
-              activeStep === steps.length - 1 ? (
-                <i className='tabler-check' />
-              ) : (
-                <DirectionalIcon ltrIconClass='tabler-arrow-right' rtlIconClass='tabler-arrow-left' />
-              )
-            }
-          >
-            {activeStep === steps.length - 1 ? 'Submit' : 'Next'}
-          </Button>
-        </div>
-      </Grid>
     </Grid>
   )
 }

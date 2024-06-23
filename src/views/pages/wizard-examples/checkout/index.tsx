@@ -179,7 +179,7 @@ const CheckoutWizard = () => {
   }
 
   return (
-    <Card>
+    <Card className='mx-5'>
       <CardContent>
         <StepperWrapper>
           <Stepper
@@ -205,9 +205,6 @@ const CheckoutWizard = () => {
           </Stepper>
         </StepperWrapper>
       </CardContent>
-      <Divider />
-
-      <CardContent>{getStepContent(activeStep, handleNext)}</CardContent>
     </Card>
   )
 }
